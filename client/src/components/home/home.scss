@@ -1,0 +1,38 @@
+#home {
+  .hero {
+    height: 95vh;
+    display: grid;
+    place-items: center;
+
+    .innerDiv {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      height: 80vh;
+      min-width: 300px;
+      width: 30vw;
+      display: grid;
+      align-items: center;
+      place-items: center;
+
+      h1 {
+        text-decoration: underline;
+      }
+
+      .logo {
+        width: 200px;
+        height: 200px;
+      }
+
+      .sign-up-link {
+        text-decoration: none;
+        color: #0277bd;
+        font-weight: 900;
+      }
+
+      h4 {
+        text-align: center;
+      }
+    }
+  }
+}
