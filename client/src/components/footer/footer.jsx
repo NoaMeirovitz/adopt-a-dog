@@ -14,6 +14,7 @@ function Footer() {
         <div className="copyright">
           Adopt a dog &copy; {new Date().getFullYear()}
           <div>054-625-6369</div>
+          <div>Noa Meirovitz</div>
         </div>
         <div className="social">
           <SocialIcon
