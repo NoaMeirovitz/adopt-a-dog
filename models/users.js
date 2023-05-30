@@ -22,6 +22,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  role: {
+    type: String,
+    required: true,
+    default: "user",
+  },
 });
 
 const Users = mongoose.model("users", userSchema);
@@ -29,3 +34,16 @@ const Users = mongoose.model("users", userSchema);
 module.exports = {
   Users,
 };
+
+// (async function () {
+//   const users = await Users.find();
+//   for (const user of users) {
+//     console.log(user.username);
+//     if (user.username === "admin") {
+//       user.role = "admin";
+//     } else {
+//       user.role = "user";
+//     }
+//     await user.save();
+//   }
+// })();

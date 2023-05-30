@@ -14,6 +14,7 @@ export default function TopBar() {
     await auth.signOut();
   };
 
+  console.log(auth);
   return (
     <div id="topBar">
       <Tabs
@@ -31,7 +32,7 @@ export default function TopBar() {
           value="/add-pet"
           to="/add-pet"
           component={Link}
-          style={{ display: auth.user ? undefined : "none" }}
+          style={{ display: auth?.user?.role === "admin" ? undefined : "none" }}
         />
         <Tab
           key="Favorites"

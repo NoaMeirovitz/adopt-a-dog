@@ -6,6 +6,7 @@ import { fetcher } from "../../helpers/fetcher";
 import "./addPet.scss";
 import { toasts } from "../../helpers/toasts";
 import { useAuth } from "../../contexts/auth/authProvider";
+import { useNavigate } from "react-router-dom";
 
 export const AddPet = ({ setPets }) => {
   const { user } = useAuth();
@@ -14,6 +15,7 @@ export const AddPet = ({ setPets }) => {
   const [description, setDescription] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [age, setAge] = useState(0);
+  const navigate = useNavigate();
 
   const handleAddPet = async () => {
     try {
@@ -29,6 +31,7 @@ export const AddPet = ({ setPets }) => {
       if (result) {
         toasts.success("Added successfully");
         setPets((prevPets) => [...prevPets, result]);
+        navigate("/pets");
       }
     } catch (err) {
       toasts.error(err.message);

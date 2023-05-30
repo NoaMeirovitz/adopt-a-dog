@@ -23,7 +23,6 @@ const PetPage = ({ pet, setSelectedPetId, setPets }) => {
     navigate("/login");
   };
 
-  const isMyPet = auth?.user?.userId === pet.creatorId;
   return (
     <div id="pet">
       <div className="root">
@@ -35,7 +34,7 @@ const PetPage = ({ pet, setSelectedPetId, setPets }) => {
             >
               Go Back
             </Button>
-            {isMyPet && (
+            {auth?.user?.role === "admin" && (
               <>
                 <Button sx={{ color: "#01579B" }} onClick={handleEdit}>
                   Edit

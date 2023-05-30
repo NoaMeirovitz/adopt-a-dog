@@ -14,6 +14,7 @@ import Favorites from "./components/favorites/favorites";
 import { fetcher } from "./helpers/fetcher";
 import { useAuth } from "./contexts/auth/authProvider";
 import { ForgotPassword } from "./components/forgot-password/forgot-password";
+import PageNotFound from "./components/page-not-found/page-not-found";
 
 function App() {
   const [pets, setPets] = useState([]);
@@ -64,6 +65,7 @@ function App() {
               path="/edit-pet"
               element={<EditPet pet={selectedPet} setPets={setPets} />}
             />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
         <Footer />

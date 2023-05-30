@@ -40,7 +40,7 @@ async function login(req, res) {
       res.status(201).json({
         userId: user.id,
         username: user.username,
-        type: user.type,
+        role: user.role,
         jwt: token,
       });
     }
@@ -93,7 +93,7 @@ async function refresh(req, res) {
         res.status(201).json({
           userId: decodedToken._doc._id,
           username: decodedToken._doc.username,
-          type: decodedToken._doc.type,
+          role: decodedToken._doc.role,
         });
       }
     });
